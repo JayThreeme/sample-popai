@@ -19,7 +19,7 @@ function AgentixLogo() {
       </div>
 
       <img
-        src="/public/agentixlogo.png"
+        src="/agentixlogo.png"
         alt="Agentix Dashboard"
         className="w-full max-w-[300px] md:max-w-[400px] h-auto"
       />
@@ -35,7 +35,7 @@ function AgentixLogo() {
 
 const AgentixLogoClean = () => (
   <img
-    src="/public/agentixlogo.png"
+    src="/agentixlogo.png"
     alt="Agentix Dashboard"
     className="w-full max-w-[300px] md:max-w-[400px] h-auto"
   />
@@ -48,7 +48,7 @@ const AgentixLogoClean = () => (
 
 const AgentixLogoFinal = () => (
   <img
-    src="/public/agentixlogo.png"
+    src="/agentixlogo.png"
     alt="Agentix Dashboard"
     className="effectup w-full max-w-[300px] md:max-w-[400px] h-auto"
   />
@@ -105,7 +105,7 @@ export function Section2() {
       {/* Background Image/Gradient */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/public/section2bg.png"
+          src="/section2bg.png"
           alt="Background"
           className="w-full h-full object-fill opacity-40 mix-blend-overlay object-top"
         />

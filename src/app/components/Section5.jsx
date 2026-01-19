@@ -88,25 +88,25 @@ export function Section5() {
 
   const cards = [
     {
-      image: "/public/s51.png",
+      image: "/s51.png",
       title: "Business Process Outsourcing",
       description:
         "Shift your business model from labor-intensive operations to high-margin agentic services.",
     },
     {
-      image: "/public/s52.png",
+      image: "/s52.png",
       title: "Commercial Aviation",
       description:
         "Manage high-volume, high-stakes scheduling and passenger support with absolute zero-error tolerance.",
     },
     {
-      image: "/public/s53.png",
+      image: "/s53.png",
       title: "Staffing & RPO",
       description:
         "Scale your delivery capabilities and placement volume without increasing administrative overhead.",
     },
     {
-      image: "/public/s51.png",
+      image: "/s51.png",
       title: "Staffing & RPO",
       description:
         "Scale your delivery capabilities and placement volume without increasing administrative overhead.",

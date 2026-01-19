@@ -47,7 +47,7 @@ const Chart = () => {
   return (
     <div className="relative w-full aspect-[1152/455] max-w-[1152px] mx-auto select-none">
       <img
-        src="/public/section-graph.png"
+        src="/section-graph.png"
         alt="Agentix Dashboard"
         className="w-full h-auto object-cover"
       />
