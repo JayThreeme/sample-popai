@@ -8,6 +8,12 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+import img1 from "/s51.png";
+import img2 from "/s52.png";
+import img3 from "/s53.png";
+import img4 from "/s54.png";
+import img5 from "/s55.png";
+
 /* -------------------- CARD -------------------- */
 const Card = ({ image, title, description }) => (
   <div className="bg-[#f9fafb] rounded-[24px] overflow-hidden flex flex-col h-[480px] group transition-all hover:shadow-lg border border-transparent hover:border-gray-200">
@@ -88,50 +94,38 @@ export function Section5() {
 
   const cards = [
     {
-      image: "/s51.png",
+      image: img5,
       title: "Business Process Outsourcing",
       description:
         "Shift your business model from labor-intensive operations to high-margin agentic services.",
     },
     {
-      image: "/s52.png",
+      image: img2,
       title: "Commercial Aviation",
       description:
         "Manage high-volume, high-stakes scheduling and passenger support with absolute zero-error tolerance.",
     },
     {
-      image: "/s53.png",
+      image: img4,
       title: "Staffing & RPO",
       description:
         "Scale your delivery capabilities and placement volume without increasing administrative overhead.",
     },
     {
-      image: "/s51.png",
-      title: "Staffing & RPO",
+      image: img3,
+      title: "Financial Services",
       description:
-        "Scale your delivery capabilities and placement volume without increasing administrative overhead.",
+        "Deploy secure, audit-ready agentic systems for sensitive back-office functions that demand total integrity.",
+    },
+    {
+      image: img1,
+      title: "Public Sector",
+      description:
+        "Deliver secure, sovereign AI infrastructure that modernizes public service delivery while meeting strict compliance standards.",
     },
   ];
 
   /* -------------------- GSAP -------------------- */
-  useGSAP(() => {
-    gsap.utils.toArray(".effectup").forEach((el) => {
-      gsap.fromTo(
-        el,
-        { y: 40, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-          },
-        },
-      );
-    });
-  });
 
   return (
     <section className="bg-white py-24 overflow-hidden">

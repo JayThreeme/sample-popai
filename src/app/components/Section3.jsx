@@ -37,9 +37,51 @@ const features = [
   },
   {
     icon: <Icons.Five />,
-    title: "Guaranteed Integrity",
+    title: "Proprietary Model Layer",
     description:
-      "Ensure total control with our HITL layer that verifies agent behavior, prevents escalations, and drives continuous performance improvements.",
+      "Deploy custom, cost-effective SLMs and Expert models tailored to your domain, offering superior speed and security on-premise or in the cloud.",
+  },
+  {
+    icon: <Icons.Five />,
+    title: "Ecosystem Integration",
+    description:
+      "Empower agents with a vast selection of 100+ native integrations, allowing them to work seamlessly within your existing software and tools.",
+  },
+  {
+    icon: <Icons.Five />,
+    title: "Best-of-Breed Intelligence",
+    description:
+      "Dynamically select the most efficient models and specialized tools for every individual task, ensuring peak performance and optimized resource allocation.",
+  },
+  {
+    icon: <Icons.Five />,
+    title: "Enterprise Knowledge",
+    description:
+      "Build secure, centralized knowledge bases with granular access controls to organize institutional data while maintaining strict safety and privacy standards.",
+  },
+  {
+    icon: <Icons.Five />,
+    title: "Operational Alignment",
+    description:
+      "Configure agents to follow your organization’s standard operating procedures and unique rules, ensuring they adapt perfectly to your specific way of working.",
+  },
+  {
+    icon: <Icons.Five />,
+    title: "Performance Monitoring",
+    description:
+      "Track every agentic action with real-time analytics and performance valuation, providing full visibility and auditability into your automated operations.",
+  },
+  {
+    icon: <Icons.Five />,
+    title: "Recursive Learning",
+    description:
+      "Benefit from a system that consistently learns from human feedback and operational data to improve agent accuracy and efficiency over time.",
+  },
+  {
+    icon: <Icons.Five />,
+    title: "Intuitive Interface",
+    description:
+      "Navigate a streamlined, user-friendly UI designed for rapid task completion and effortless management of your entire AI agent workforce.",
   },
 ];
 
@@ -109,50 +151,6 @@ export function Section3() {
   };
 
   /* ---------------- GSAP ---------------- */
-  useGSAP(() => {
-    // Create a context for this component
-    const ctx = gsap.context(() => {
-      // Select all effectup elements
-      const elements = gsap.utils.toArray(".effectup");
-      const effectright = gsap.utils.toArray(".effectright");
-
-      elements.forEach((element) => {
-        gsap.set(element, { y: 40, opacity: 0 });
-        gsap.to(element, {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 85%",
-            end: "top 45%",
-            toggleActions: "play reverse play reverse",
-            once: true,
-          },
-        });
-      });
-
-      effectright.forEach((element) => {
-        gsap.set(element, { x: 60, opacity: 0 });
-        gsap.to(element, {
-          x: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "right 150%",
-            end: "right 50%",
-            toggleActions: "play reverse play reverse",
-            once: true,
-          },
-        });
-      });
-    });
-
-    return () => ctx.revert(); // Cleanup
-  });
 
   const maxIndex = features.length - slidesToShow;
 

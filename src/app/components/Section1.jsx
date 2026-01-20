@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import chart from "/section-graph.png";
 const Chart = () => {
   // Coordinates converted to percentages for responsive scaling
   // Width: 1152, Height: 455
@@ -47,7 +48,7 @@ const Chart = () => {
   return (
     <div className="relative w-full aspect-[1152/455] max-w-[1152px] mx-auto select-none">
       <img
-        src="/section-graph.png"
+        src={chart}
         alt="Agentix Dashboard"
         className="w-full h-auto object-cover"
       />
@@ -153,33 +154,6 @@ const Card = ({
 );
 
 export function Section1() {
-  useGSAP(() => {
-    // Create a context for this component
-    const ctx = gsap.context(() => {
-      // Select all effectup elements
-      const elements = gsap.utils.toArray(".effectup");
-
-      elements.forEach((element) => {
-        gsap.set(element, { y: 40, opacity: 0 });
-        gsap.to(element, {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 80%",
-            end: "top 45%",
-            toggleActions: "play reverse play reverse",
-            once: true,
-          },
-        });
-      });
-    });
-
-    return () => ctx.revert(); // Cleanup
-  });
-
   return (
     <section className="bg-white px-4 py-12 md:px-12 md:py-24 overflow-hidden">
       <div className="max-w-[1152px] mx-auto flex flex-col items-center gap-4">

@@ -121,51 +121,6 @@ export function Section4() {
     };
   }, []);
 
-  useGSAP(() => {
-    // Create a context for this component
-    const ctx = gsap.context(() => {
-      // Select all effectup elements
-      const elements = gsap.utils.toArray(".effectup");
-      const effectright = gsap.utils.toArray(".effectright");
-
-      elements.forEach((element) => {
-        gsap.set(element, { y: 40, opacity: 0 });
-        gsap.to(element, {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 85%",
-            end: "top 45%",
-            toggleActions: "play reverse play reverse",
-            once: false,
-          },
-        });
-      });
-
-      effectright.forEach((element) => {
-        gsap.set(element, { x: 60, opacity: 0 });
-        gsap.to(element, {
-          x: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "right 150%",
-            end: "right 50%",
-            toggleActions: "play reverse play reverse",
-            once: false,
-          },
-        });
-      });
-    });
-
-    return () => ctx.revert(); // Cleanup
-  });
-
   return (
     <section ref={sectionRef} className="bg-white px-4 py-12 md:px-12 md:py-24">
       {/* Header */}

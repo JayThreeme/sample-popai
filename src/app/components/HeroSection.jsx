@@ -43,6 +43,7 @@ export function HeroSection() {
     const ctx = gsap.context(() => {
       // Select all effectup elements
       const elements = gsap.utils.toArray(".effectup");
+      const effectright = gsap.utils.toArray(".effectright");
 
       elements.forEach((element) => {
         gsap.set(element, { y: 40, opacity: 0 });
@@ -55,8 +56,22 @@ export function HeroSection() {
           scrollTrigger: {
             trigger: element,
             start: "top 80%",
-            end: "top 45%",
-            toggleActions: "play reverse play reverse",
+            once: true,
+          },
+        });
+      });
+
+      effectright.forEach((element) => {
+        gsap.set(element, { x: 40, opacity: 0 });
+
+        gsap.to(element, {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
             once: true,
           },
         });

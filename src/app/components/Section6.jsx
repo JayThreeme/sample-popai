@@ -147,51 +147,6 @@ const ContactForm = () => {
 };
 
 export function Section6() {
-  useGSAP(() => {
-    // Create a context for this component
-    const ctx = gsap.context(() => {
-      // Select all effectup elements
-      const elements = gsap.utils.toArray(".effectup");
-      const effectright = gsap.utils.toArray(".effectright");
-
-      elements.forEach((element) => {
-        gsap.set(element, { y: 40, opacity: 0 });
-        gsap.to(element, {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 80%",
-            end: "top 45%",
-            toggleActions: "play reverse play reverse",
-            once: true,
-          },
-        });
-      });
-
-      effectright.forEach((element) => {
-        gsap.set(element, { x: 60, opacity: 0 });
-        gsap.to(element, {
-          x: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "right 150%",
-            end: "right 50%",
-            toggleActions: "play reverse play reverse",
-            once: true,
-          },
-        });
-      });
-    });
-
-    return () => ctx.revert(); // Cleanup
-  });
-
   return (
     <section className="bg-white py-24 w-full">
       <div className="max-w-[1152px] mx-auto px-4 md:px-0 flex flex-col lg:flex-row gap-6 lg:gap-12 items-start">

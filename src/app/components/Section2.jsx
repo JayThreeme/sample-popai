@@ -2,8 +2,12 @@ import React from "react";
 import { Icons } from "../../icons";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+import agentixlogo from "/agentixlogo.png";
+import agentiximg from "/section2-image.png";
+import agentixbg from "/section2bg.png";
+
+// gsap.registerPlugin(ScrollTrigger);
 // Agentix Logo Components
 function AgentixLogo() {
   return (
@@ -19,7 +23,7 @@ function AgentixLogo() {
       </div>
 
       <img
-        src="/agentixlogo.png"
+        src={agentixlogo}
         alt="Agentix Dashboard"
         className="w-full max-w-[300px] md:max-w-[400px] h-auto"
       />
@@ -48,64 +52,19 @@ const AgentixLogoClean = () => (
 
 const AgentixLogoFinal = () => (
   <img
-    src="/agentixlogo.png"
+    src={agentixlogo}
     alt="Agentix Dashboard"
     className="effectup w-full max-w-[300px] md:max-w-[400px] h-auto"
   />
 );
 
 export function Section2() {
-  useGSAP(() => {
-    // Create a context for this component
-    const ctx = gsap.context(() => {
-      // Select all effectup elements
-      const elements = gsap.utils.toArray(".effectup");
-      const effectright = gsap.utils.toArray(".effectright");
-
-      elements.forEach((element) => {
-        gsap.set(element, { y: 40, opacity: 0 });
-        gsap.to(element, {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 85%",
-            end: "top 45%",
-            toggleActions: "play reverse play reverse",
-            once: true,
-          },
-        });
-      });
-
-      effectright.forEach((element) => {
-        gsap.set(element, { x: 60, opacity: 0 });
-        gsap.to(element, {
-          x: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "right 150%",
-            end: "right 50%",
-            toggleActions: "play reverse play reverse",
-            once: true,
-          },
-        });
-      });
-    });
-
-    return () => ctx.revert(); // Cleanup
-  });
-
   return (
     <section className="relative w-full bg-[#121212] overflow-hidden h-screen">
       {/* Background Image/Gradient */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/section2bg.png"
+          src={agentixbg}
           alt="Background"
           className="w-full h-full object-fill opacity-40 mix-blend-overlay object-top"
         />
@@ -152,7 +111,7 @@ export function Section2() {
           {/* Right Image */}
           <div className="relative w-full h-full overflow-visible">
             <img
-              src="/section2-image.png"
+              src={agentiximg}
               alt="Agentix Dashboard"
               className="effectright absolute top-0 -lg:top-8 left-0 w-full md:w-[1200px] h-full md:h-[950px] max-w-none -translate-x-0 translate-y-0 z-10"
             />

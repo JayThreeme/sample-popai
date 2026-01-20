@@ -1,14 +1,14 @@
-import React from 'react';
-import { Navigation } from '@/app/components/Navigation';
-import { HeroSection } from '@/app/components/HeroSection';
-import { Section1 } from '@/app/components/Section1';
-import { Section2 } from '@/app/components/Section2';
-import { Section3 } from '@/app/components/Section3';
-import { Section4 } from '@/app/components/Section4';
-import { Section5 } from '@/app/components/Section5';
-import { Section6 } from '@/app/components/Section6';
-import { Section7 } from '@/app/components/Section7';
-import { Footer } from '@/app/components/Footer';
+import React from "react";
+import { Navigation } from "@/app/components/Navigation";
+import { HeroSection } from "@/app/components/HeroSection";
+import { Section1 } from "@/app/components/Section1";
+import { Section2 } from "@/app/components/Section2";
+import { Section3 } from "@/app/components/Section3";
+import { Section4 } from "@/app/components/Section4";
+import { Section5 } from "@/app/components/Section5";
+import { Section6 } from "@/app/components/Section6";
+import { Section7 } from "@/app/components/Section7";
+import { Footer } from "@/app/components/Footer";
 
 export default function App() {
   return (
