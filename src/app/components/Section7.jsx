@@ -30,7 +30,7 @@ export function Section7() {
 
   // Parallax distances (tweak freely)
   const backOffset = 130 * (1 - progress); // slow
-  const frontOffset = 190 * (1 - progress); // faster
+  const frontOffset = 150 * (1 - progress); // faster
   const textOffset = -200 * (1 - progress); // medium
 
   return (
@@ -45,7 +45,7 @@ export function Section7() {
           alt="City skyline background"
           className="w-full h-full object-cover object-top will-change-transform"
           style={{
-            transform: `translate3d(0, ${backOffset}px, 0)`,
+            transform: `translate3d(0, ${backOffset}px, 0) scale(${1 + 0.3 * progress})`,
           }}
         />
       </div>
@@ -88,6 +88,8 @@ export function Section7() {
           POPAI
         </h2>
       </div>
+
+      <div className="absolute inset-0 z-35 bg-[linear-gradient(180deg,rgba(10,10,10,0)_46.63%,#0A0A0A_100%)] pointer-events-none"></div>
 
       {/* CONTENT */}
       <div className="relative z-40 flex flex-col items-center text-center px-6 max-w-[900px] mx-auto gap-8 md:gap-12 min-h-[600px] md:min-h-screen justify-end pb-40">

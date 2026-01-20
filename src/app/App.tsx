@@ -9,6 +9,7 @@ import { Section5 } from "@/app/components/Section5";
 import { Section6 } from "@/app/components/Section6";
 import { Section7 } from "@/app/components/Section7";
 import { Footer } from "@/app/components/Footer";
+import { Newsletter } from "./components/Newsletter";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         <Section6 />
         <Section7 />
       </main>
+      <Newsletter />
       <Footer />
     </div>
   );
