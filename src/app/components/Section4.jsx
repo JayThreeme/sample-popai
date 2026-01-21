@@ -12,6 +12,8 @@ import telemarketingimg from "../../assets/telemarketing.png";
 import customerimg from "../../assets/customer.png";
 import knowledgeimg from "../../assets/knowledge.png";
 import procurementimg from "../../assets/procurement.png";
+
+
 const LearnMoreArrowIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 16 16" fill="none">
     <path
@@ -110,8 +112,8 @@ export function Section4() {
     // Pin the image container
     ScrollTrigger.create({
       trigger: section,
-      start: "top top-=30%",
-      end: () => `+=${section.offsetHeight - window.innerHeight + 100} `,
+      start: "top top-=20%",
+      end: () => `+=${section.offsetHeight - window.innerHeight + 10} `,
       pin: imageContainer,
       pinSpacing: false,
     });
@@ -122,9 +124,9 @@ export function Section4() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white px-4 py-12 md:px-12 md:py-24">
+    <section ref={sectionRef} className="bg-white px-4 py-12 md:px-12 md:py-24 w-full h-auto">
       {/* Header */}
-      <div className="max-w-[1152px] mx-auto px-4 md:px-0 flex flex-col gap-12">
+      <div className="max-w-[1152px] mx-auto px-4 md:px-0 flex flex-col gap-12 h-fit">
         <div className="text-left h-fit w-full mx-auto space-y-6 flex flex-col items-start justify-start">
           <h2 className="effectup text-4xl md:text-5xl lg:text-6xl font-normal text-[#0a0a0a] leading-tight">
             AI Agents Built to <br />
@@ -132,21 +134,21 @@ export function Section4() {
               Deliver Real Results
             </span>
           </h2>
-          <p className="effectup font-inter font-extralight text-base md:text-lg text-[#1d293d]   leading-relaxed">
+          <p className="effectup font-inter font-extralight text-base md:text-lg text-[#1d293d]  leading-relaxed">
             Our AI is precise. If uncertainty arises, our experts step in,
             ensuring accuracy before your customer interaction.
           </p>
         </div>
 
         {/* Content Split */}
-        <div className="w-full flex flex-col lg:flex-row items-start gap-0 md:gap-12">
+        <div className="w-full h-full flex flex-col lg:flex-row items-start gap-0 md:gap-4 ">
           {/* Left: Image Composition (Sticky) */}
           <div
             ref={imageContainerRef}
-            className="w-full lg:flex-[1_0_0] lg:sticky lg:top-[100px]"
+            className="w-full lg:flex-[1_1_0] lg:sticky h-full justify-items-center items-center"
           >
-            <div className="w-full h-full relative rounded-[24px] overflow-hidden ">
-              <div className="relative w-full max-w-[623px] h-auto  flex items-center justify-center text-center transition-opacity duration-500">
+            <div className="w-full h-full relative rounded-[24px] overflow-hidden flex justify-center items-center">
+              <div className="relative w-full max-w-[623px] h-auto my-auto  flex items-center justify-center text-center transition-opacity duration-500">
                 <img
                   src={`${features[activeFeature].image}`}
                   alt=""
@@ -157,7 +159,7 @@ export function Section4() {
           </div>
 
           {/* Right: Feature List */}
-          <div className="w-full lg:w-[40%] flex flex-col gap-16 py-[32px]">
+          <div className="w-full lg:w-[50%] flex flex-col gap-12 py-[32px]">
             {features.map((feature, index) => (
               <div
                 key={feature.id}
@@ -182,13 +184,13 @@ export function Section4() {
 const FeatureItem = ({ title, description, isActive = false, image }) => {
   return (
     <div
-      className={`flex flex-col items-start gap-[16px] w-full transition-all duration-500 ${
-        isActive ? "opacity-100 scale-100" : "opacity-40 scale-95"
-      }`}
+      className={`flex flex-col items-start gap-[16px] w-full transition-all duration-500 ${isActive ? "opacity-100 scale-100" : "opacity-40 scale-95"
+        }`}
     >
       <div className="relative w-full h-auto flex lg:hidden items-center justify-center text-center transition-opacity duration-500">
         <img src={image} alt="" className="w-full h-full  object-contain" />
       </div>
+
       <h4 className=" text-4xl  leading-[1.2] text-[#171717]">{title}</h4>
       <p className=" text-base leading-[1.7] text-[#404040]">{description}</p>
 
