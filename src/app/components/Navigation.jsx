@@ -129,7 +129,7 @@ export function Navigation() {
         title: "Customization & Fine-Tuning",
         subtitle: "",
         href: "#",
-        image: navimage5,
+        image: navimage6,
       },
     },
     Company: {
@@ -180,7 +180,7 @@ export function Navigation() {
                 <div className="text-xs font-semibold text-gray-400 mb-4">
                   {dropdownItems[text].sidebar.title}
                 </div>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 justify-start items-start">
                   {dropdownItems[text].sidebar.items.map((item, idx) => (
                     <a
                       key={`sidebar-${idx}`}
@@ -194,7 +194,7 @@ export function Navigation() {
               </div>
 
               {/* Cards Grid */}
-              <div className="col-span-3 grid grid-cols-3 gap-4">
+              <div className="col-span-3 grid grid-cols-3 gap-4 justify-center items-center">
                 {[
                   {
                     title: dropdownItems[text].column1.title,
@@ -222,10 +222,11 @@ export function Navigation() {
                       alt={card.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-end justify-start p-4">
-                      <span className="text-white font-semibold text-sm">
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-end justify-start p-4 pr-2  bg-[linear-gradient(180deg,rgba(10,10,10,0)_46.63%,#0A0A0A_100%)]">
+                      <span className="text-white font-normal  text-sm">
                         {card.title} <span className="ml-1">›</span>
                       </span>
+                      {/* <div className="absolute inset-0 z-35 bg-[linear-gradient(180deg,rgba(10,10,10,0)_46.63%,#0A0A0A_100%)] pointer-events-none"></div> */}
                     </div>
                   </a>
                 ))}

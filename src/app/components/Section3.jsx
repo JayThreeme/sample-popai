@@ -90,11 +90,10 @@ const FeatureCard = ({ icon, title, description, glowColor }) => (
   <div
     className={`relative rounded-xl bg-[#1a1a1a] border border-white/10 p-6 h-[320px]
     flex flex-col justify-between transition-all duration-300
-    ${
-      glowColor
+    ${glowColor
         ? "border-[#e40879] shadow-[0_0_30px_-10px_rgba(228,8,121,0.3)]"
         : ""
-    }`}
+      }`}
   >
     <div className="flex flex-col gap-4">
       <div className="w-10 h-10 text-white">{icon}</div>
@@ -108,19 +107,76 @@ const FeatureCard = ({ icon, title, description, glowColor }) => (
 
 /* ---------------- PROGRESS ---------------- */
 const SegmentedProgress = ({ total, active }) => (
-  <div className="flex gap-4 mb-12 w-full max-w-lg">
+  <div className="flex gap-4 w-full max-w-lg">
     {Array.from({ length: total }).map((_, idx) => (
       <div
         key={idx}
         className="h-1 flex-1 rounded-full bg-white/10 overflow-hidden"
       >
         <div
-          className={`h-full bg-white transition-opacity duration-300 ${
-            idx === active ? "opacity-100" : "opacity-0"
-          }`}
+          className={`h-full bg-white transition-opacity duration-300 ${idx === active ? "opacity-100" : "opacity-0"
+            }`}
         />
       </div>
     ))}
+  </div>
+);
+
+/* ---------------- NAVIGATION ARROWS ---------------- */
+const NavigationArrows = ({ onPrev, onNext, canGoPrev, canGoNext }) => (
+  <div className="flex items-center gap-4">
+    <button
+      onClick={onPrev}
+      disabled={!canGoPrev}
+      className={`w-10 h-10 rounded-full border border-white/20 flex items-center justify-center transition-all duration-300 ${canGoPrev
+        ? "bg-white/5 hover:bg-white/10 hover:border-white/30 cursor-pointer"
+        : "bg-white/5 opacity-40 cursor-not-allowed"
+        }`}
+      aria-label="Previous slide"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="text-white"
+      >
+        <path
+          d="M12.5 15L7.5 10L12.5 5"
+          stroke="currentColor"
+          strokeWidth="1.67"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </button>
+    <button
+      onClick={onNext}
+      disabled={!canGoNext}
+      className={`w-10 h-10 rounded-full border border-white/20 flex items-center justify-center transition-all duration-300 ${canGoNext
+        ? "bg-white/5 hover:bg-white/10 hover:border-white/30 cursor-pointer"
+        : "bg-white/5 opacity-40 cursor-not-allowed"
+        }`}
+      aria-label="Next slide"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="text-white"
+      >
+        <path
+          d="M7.5 5L12.5 10L7.5 15"
+          stroke="currentColor"
+          strokeWidth="1.67"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </button>
   </div>
 );
 
@@ -154,15 +210,38 @@ export function Section3() {
 
   const maxIndex = features.length - slidesToShow;
 
+  const handlePrev = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
+  };
+
+  const canGoPrev = currentSlide > 0;
+  const canGoNext = currentSlide < maxIndex;
+
   return (
     <section className="bg-[#101010] pt-0 md:pt-24 pb-24 overflow-hidden">
       <div className="max-w-[1152px] mx-auto px-4 flex flex-col gap-16">
         {/* CAROUSEL */}
         <div className="">
-          <div className="flex justify-start">
-            <SegmentedProgress
-              total={features.length - slidesToShow + 1}
-              active={Math.min(currentSlide, maxIndex)}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+            <div className="flex-1 w-full sm:w-auto">
+              <SegmentedProgress
+                total={features.length - slidesToShow + 1}
+                active={Math.min(currentSlide, maxIndex)}
+              />
+            </div>
+            <NavigationArrows
+              onPrev={handlePrev}
+              onNext={handleNext}
+              canGoPrev={canGoPrev}
+              canGoNext={canGoNext}
             />
           </div>
 
